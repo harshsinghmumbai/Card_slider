@@ -17,6 +17,9 @@
   padding-top: 7px;
   cursor: pointer;
 }
+/* .slick-arrow {
+  @apply bg-gray-500 rounded-full hover:border-2 border-black;
+} */
 
 body {
   background-color: azure;
