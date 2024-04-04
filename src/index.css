@@ -3,12 +3,12 @@
 
 @tailwind utilities;
 
-.slick-slide > div {
-  margin: 0 10px;
+.slick-slide /*slick-slide(ka andhar) ka child div*/> div {
+  margin: /*top-bottom*/ 0 10px /*left-right*/;
 }
 
 .slick-prev,
-.slick-next {
+.slick-next/*targetting both button*/ {
   width: 2rem;
   height: 2rem;
   border-radius: 9999px;
@@ -17,6 +17,7 @@
   padding-top: 7px;
   cursor: pointer;
 }
+
 body {
   background-color: azure;
 }

@@ -2,41 +2,48 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        backgroundColor: "#00000033",
-      }}
-      onClick={onClick}
-    />
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "#00000033" }}
-      onClick={onClick}
-    />
-  );
-}
-
 const Card_item = ({ Card_data }) => {
   const settings = {
+    //this is my default responsive design property,were 1224px ka after what should be applyed//
     dots: true,
     infinite: false,
-    speed: 300,
-    slidesToShow: 3,
+    speed: 500,
+    lazyLoad: true,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        // if screen is 1224px before then applied this below property//
+        breakpoint: 1224,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: false,
+          lazyLoad: true,
+        },
+      },
+      {
+        // if screen is 790px before then applied this below property//
+        breakpoint: 790,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          lazyLoad: true,
+        },
+      },
+      {
+        // if screen is 500px before then applied this below property//
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          lazyLoad: true,
+        },
+      },
+    ],
   };
   return (
     <>
@@ -67,3 +74,30 @@ const Card_item = ({ Card_data }) => {
 };
 
 export default Card_item;
+
+//Customizing arrow in react slick//
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        backgroundColor: "#00000033",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "#00000033" }}
+      onClick={onClick}
+    />
+  );
+}

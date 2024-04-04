@@ -9,7 +9,7 @@ const App = () => {
       <div id="container" className="flex justify-center">
         <div
           id="card_container"
-          className="rounded-xl w-[85%] h-fit mt-5 p-2 mb-5"
+          className="w-[85%] h-fit mt-5 p-2 mb-5 max-w-[1400px] m-auto"
         >
           <Card_item Card_data={data} />
         </div>
